@@ -41,7 +41,7 @@ Frontend bestalbertine.tech-http-frontend
 
 
 frontend  bestalbertine.tech-https-frontend
-	bind *:443 ssl crt /etc/ssl/bestalbertine.tech.pem
+	bind *:443 ssl crt /etc/letsencrypt/live/www.bestalbertine.tech/fullchain.pem
 	http-request set-header X-Forwarded-Proto https
         default_backend bestalbertine.tech-backend
 
