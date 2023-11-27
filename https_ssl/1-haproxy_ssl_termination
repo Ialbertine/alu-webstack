@@ -33,21 +33,22 @@ defaults
 	errorfile 503 /etc/haproxy/errors/503.http
 	errorfile 504 /etc/haproxy/errors/504.http
 
-# start of parameters for aysuarex.tech
-frontend aysuarex.tech-http-frontend
+# start of parameters for bestalbertine.tech
+Frontend bestalbertine.tech-http-frontend
 	bind	 *:80
 	http-request set-header X-Forwarded-Proto http
-	default_backend	 aysuarex.tech-backend
+	default_backend	bestalbertine.tech-backend
 
 
-frontend  aysuarex.tech-https-frontend
-	bind *:443 ssl crt /etc/ssl/aysuarex.tech.pem
+frontend  bestalbertine.tech-https-frontend
+	bind *:443 ssl crt /etc/ssl/bestalbertine.tech.pem
 	http-request set-header X-Forwarded-Proto https
-        default_backend aysuarex.tech-backend
+        default_backend bestalbertine.tech-backend
 
 
-backend aysuarex.tech-backend
+backend bestalbertine.tech-backend
         balance roundrobin
         server 5865-web-01 3.208.20.89:80 check
         server 5865-web-02 107.20.77.245:80 check
 # end of parameters
+
